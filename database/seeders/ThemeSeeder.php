@@ -15,7 +15,7 @@ class ThemeSeeder extends Seeder
     public function run()
     {
         $array = [
-            ["app_name", "@TTEND"],
+            ["app_name", "OAF"],
             ["logo_img", 'images/logo.png'],
             ["login_banner_img", "images/login.png"],
             ["login_bg_img", null],
