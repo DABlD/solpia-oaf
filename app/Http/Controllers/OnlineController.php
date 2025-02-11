@@ -65,24 +65,26 @@ class OnlineController extends Controller
         }
 
         // SAVE SEA SERVICE
-        foreach($req->seaService as $ss){
-            $temp = new SeaService();
-            $temp->crew_id = $crew->id;
-            $temp->vessel_name = $ss['vessel_name'];
-            $temp->vessel_type = $ss['vessel_type'];
-            $temp->rank = $ss['rank'];
-            $temp->gross_tonnage = $ss['gross_tonnage'];
-            $temp->flag = $ss['flag'];
-            $temp->bhp_kw = $ss['bhp_kw'];
-            $temp->trade = $ss['trade'];
-            $temp->previous_salary = $ss['previous_salary'];
-            $temp->manning_agent = $ss['manning_agent'];
-            $temp->principal = $ss['principal'];
-            $temp->crew_nationality = $ss['crew_nationality'];
-            $temp->sign_on = $ss['sign_on'];
-            $temp->sign_off = $ss['sign_off'];
-            $temp->remarks = $ss['remarks'];
-            $temp->save();
+        if($req->seaService){
+            foreach($req->seaService as $ss){
+                $temp = new SeaService();
+                $temp->crew_id = $crew->id;
+                $temp->vessel_name = $ss['vessel_name'];
+                $temp->vessel_type = $ss['vessel_type'];
+                $temp->rank = $ss['rank'];
+                $temp->gross_tonnage = $ss['gross_tonnage'];
+                $temp->flag = $ss['flag'];
+                $temp->bhp_kw = $ss['bhp_kw'];
+                $temp->trade = $ss['trade'];
+                $temp->previous_salary = $ss['previous_salary'];
+                $temp->manning_agent = $ss['manning_agent'];
+                $temp->principal = $ss['principal'];
+                $temp->crew_nationality = $ss['crew_nationality'];
+                $temp->sign_on = $ss['sign_on'];
+                $temp->sign_off = $ss['sign_off'];
+                $temp->remarks = $ss['remarks'];
+                $temp->save();
+            }
         }
 
         // SAVE EDUC BG
@@ -113,22 +115,24 @@ class OnlineController extends Controller
         }
 
         // SAVE RECENT VESSEL
-        foreach($req->recentVessel as $rv){
-            $temp = new RecentVessel();
-            $temp->crew_id = $crew->id;
-            $temp->vessel_name = $rv['vessel_name'];
-            $temp->ship_manager = $rv['ship_manager'];
-            $temp->charterer = $rv['charterer'];
+        if($req->recentVessel){
+            foreach($req->recentVessel as $rv){
+                $temp = new RecentVessel();
+                $temp->crew_id = $crew->id;
+                $temp->vessel_name = $rv['vessel_name'];
+                $temp->ship_manager = $rv['ship_manager'];
+                $temp->charterer = $rv['charterer'];
 
-            $temp->type_of_cargo = $rv['type_of_cargo'] ?? null;
-            $temp->loading_port = $rv['loading_port'] ?? null;
-            $temp->discharging_port = $rv['discharging_port'] ?? null;
-            
-            $temp->main_engine = $rv['main_engine'] ?? null;
-            $temp->aux_engine = $rv['aux_engine'] ?? null;
-            $temp->ballast_system = $rv['ballast_system'] ?? null;
+                $temp->type_of_cargo = $rv['type_of_cargo'] ?? null;
+                $temp->loading_port = $rv['loading_port'] ?? null;
+                $temp->discharging_port = $rv['discharging_port'] ?? null;
+                
+                $temp->main_engine = $rv['main_engine'] ?? null;
+                $temp->aux_engine = $rv['aux_engine'] ?? null;
+                $temp->ballast_system = $rv['ballast_system'] ?? null;
 
-            $temp->save();
+                $temp->save();
+            }
         }
 
         // SAVE BACKGROUND CHECK
