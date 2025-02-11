@@ -18,11 +18,11 @@ class CreateEducationalBackgroundsTable extends Migration
 
             $table->integer('crew_id')->unsigned();
 
-            $table->string('type');
-            $table->string('course');
-            $table->string('year');
-            $table->string('school');
-            $table->string('address');
+            $table->string('type')->nullable();
+            $table->string('course')->nullable();
+            $table->string('year')->nullable();
+            $table->string('school')->nullable();
+            $table->string('address')->nullable();
 
             $table->timestamps();
         });
