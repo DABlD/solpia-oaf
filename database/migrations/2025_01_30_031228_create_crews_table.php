@@ -45,6 +45,7 @@ class CreateCrewsTable extends Migration
             $table->string('higher_license')->nullable();
 
             $table->boolean('synced')->default(false);
+            $table->boolean('privacy_policy')->default(true);
 
             $table->timestamps();
             $table->softDeletes();
