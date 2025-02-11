@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/','OnlineController@index')->name('online.apply');
 Route::post('store','OnlineController@store')->name('online.store');
-Route::get('update','OnlineController@update')->name('online.update');
+// Route::get('update','OnlineController@update')->name('online.update');
 
 Route::group([
         'middleware' => 'auth',

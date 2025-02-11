@@ -121,7 +121,7 @@
                                                         @foreach($categories as $category => $ranks)
                                                             <optgroup label="{{ $category }}"></optgroup>
                                                             @foreach($ranks as $rank)
-                                                                <option value="{{ $rank->name }}" data-category="{{ $rank->category }}">
+                                                                <option value="{{ $rank->id }}" data-category="{{ $rank->category }}">
                                                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                                                     {{ $rank->name }} ({{ $rank->abbr }})
                                                                 </option>
@@ -569,115 +569,33 @@
 
                                         <br>
 
-                                        <div class="row deck">
-                                            {{ $input(2, 'dc-vname1', 'Vessel Name') }}
-                                            {{ $input(2, 'dc-vtype1', 'Type of Cargo') }}
-                                            {{ $input(2, 'dc-lport1', 'Loading Port') }}
-                                            {{ $input(2, 'dc-dport1', 'Discharging Port') }}
-                                            {{ $input(2, 'dc-smanager1', 'Ship Manager') }}
-                                            {{ $input(2, 'dc-charterer1', 'Charterer') }}
+                                        {{-- DECK RECENT VESSELS --}}
+                                        @for($i = 1; $i <= 5; $i++)
+                                            <div class="row deck">
+                                                {{ $input(2, "dc-vname$i", "Vessel Name") }}
+                                                {{ $input(2, "dc-vtype$i", "Type of Cargo") }}
+                                                {{ $input(2, "dc-lport$i", "Loading Port") }}
+                                                {{ $input(2, "dc-dport$i", "Discharging Port") }}
+                                                {{ $input(2, "dc-smanager$i", "Ship Manager") }}
+                                                {{ $input(2, "dc-charterer$i", "Charterer") }}
 
-                                            <hr>
-                                        </div>
+                                                <hr>
+                                            </div>
+                                        @endfor
 
-                                        <div class="row deck">
-                                            {{ $input(2, 'dc-vname2', 'Vessel Name') }}
-                                            {{ $input(2, 'dc-vtype2', 'Type of Cargo') }}
-                                            {{ $input(2, 'dc-lport2', 'Loading Port') }}
-                                            {{ $input(2, 'dc-dport2', 'Discharging Port') }}
-                                            {{ $input(2, 'dc-smanager2', 'Ship Manager') }}
-                                            {{ $input(2, 'dc-charterer2', 'Charterer') }}
+                                        {{-- ENGINE RECENT VESSELS --}}
+                                        @for($i = 1; $i <= 5; $i++)
+                                            <div class="row engine">
+                                                {{ $input(4, "ec-vname$i", "Vessel Name") }}
+                                                {{ $input(4, "ec-engine$i", "Main Engine Type & Maker") }}
+                                                {{ $input(4, "ec-auengine$i", "Auxiliary Engine / Generator") }}
+                                                {{ $input(4, "ec-ballast$i", "Ballast Water Management System") }}
+                                                {{ $input(4, "ec-smanager$i", "Ship Manager") }}
+                                                {{ $input(4, "ec-charterer$i", "Charterer") }}
 
-                                            <hr>
-                                        </div>
-
-                                        <div class="row deck">
-                                            {{ $input(2, 'dc-vname3', 'Vessel Name') }}
-                                            {{ $input(2, 'dc-vtype3', 'Type of Cargo') }}
-                                            {{ $input(2, 'dc-lport3', 'Loading Port') }}
-                                            {{ $input(2, 'dc-dport3', 'Discharging Port') }}
-                                            {{ $input(2, 'dc-smanager3', 'Ship Manager') }}
-                                            {{ $input(2, 'dc-charterer3', 'Charterer') }}
-
-                                            <hr>
-                                        </div>
-
-                                        <div class="row deck">
-                                            {{ $input(2, 'dc-vname4', 'Vessel Name') }}
-                                            {{ $input(2, 'dc-vtype4', 'Type of Cargo') }}
-                                            {{ $input(2, 'dc-lport4', 'Loading Port') }}
-                                            {{ $input(2, 'dc-dport4', 'Discharging Port') }}
-                                            {{ $input(2, 'dc-smanager4', 'Ship Manager') }}
-                                            {{ $input(2, 'dc-charterer4', 'Charterer') }}
-
-                                            <hr>
-                                        </div>
-
-                                        <div class="row deck">
-                                            {{ $input(2, 'dc-vname5', 'Vessel Name') }}
-                                            {{ $input(2, 'dc-vtype5', 'Type of Cargo') }}
-                                            {{ $input(2, 'dc-lport5', 'Loading Port') }}
-                                            {{ $input(2, 'dc-dport5', 'Discharging Port') }}
-                                            {{ $input(2, 'dc-smanager5', 'Ship Manager') }}
-                                            {{ $input(2, 'dc-charterer5', 'Charterer') }}
-
-                                            <hr>
-                                        </div>
-
-                                        <div class="row engine">
-                                            {{ $input(4, 'ec-vname1', 'Vessel Name') }}
-                                            {{ $input(4, 'ec-engine1', 'Main Engine Type & Maker') }}
-                                            {{ $input(4, 'ec-auengine1', 'Auxiliary Engine / Generator') }}
-                                            {{ $input(4, 'ec-ballast', 'Ballast Water Management System') }}
-                                            {{ $input(4, 'ec-smanager1', 'Ship Manager') }}
-                                            {{ $input(4, 'ec-charterer1', 'Charterer') }}
-
-                                            <hr>
-                                        </div>
-
-                                        <div class="row engine">
-                                            {{ $input(4, 'ec-vname2', 'Vessel Name') }}
-                                            {{ $input(4, 'ec-engine2', 'Main Engine Type & Maker') }}
-                                            {{ $input(4, 'ec-auengine2', 'Auxiliary Engine / Generator') }}
-                                            {{ $input(4, 'ec-ballas2', 'Ballast Water Management System') }}
-                                            {{ $input(4, 'ec-smanager2', 'Ship Manager') }}
-                                            {{ $input(4, 'ec-charterer2', 'Charterer') }}
-
-                                            <hr>
-                                        </div>
-
-                                        <div class="row engine">
-                                            {{ $input(4, 'ec-vname3', 'Vessel Name') }}
-                                            {{ $input(4, 'ec-engine3', 'Main Engine Type & Maker') }}
-                                            {{ $input(4, 'ec-auengine3', 'Auxiliary Engine / Generator') }}
-                                            {{ $input(4, 'ec-ballas3', 'Ballast Water Management System') }}
-                                            {{ $input(4, 'ec-smanager3', 'Ship Manager') }}
-                                            {{ $input(4, 'ec-charterer3', 'Charterer') }}
-
-                                            <hr>
-                                        </div>
-
-                                        <div class="row engine">
-                                            {{ $input(4, 'ec-vname4', 'Vessel Name') }}
-                                            {{ $input(4, 'ec-engine4', 'Main Engine Type & Maker') }}
-                                            {{ $input(4, 'ec-auengine4', 'Auxiliary Engine / Generator') }}
-                                            {{ $input(4, 'ec-ballas4', 'Ballast Water Management System') }}
-                                            {{ $input(4, 'ec-smanager4', 'Ship Manager') }}
-                                            {{ $input(4, 'ec-charterer4', 'Charterer') }}
-
-                                            <hr>
-                                        </div>
-
-                                        <div class="row engine">
-                                            {{ $input(4, 'ec-vname5', 'Vessel Name') }}
-                                            {{ $input(4, 'ec-engine5', 'Main Engine Type & Maker') }}
-                                            {{ $input(4, 'ec-auengine5', 'Auxiliary Engine / Generator') }}
-                                            {{ $input(4, 'ec-ballas5', 'Ballast Water Management System') }}
-                                            {{ $input(4, 'ec-smanager5', 'Ship Manager') }}
-                                            {{ $input(4, 'ec-charterer5', 'Charterer') }}
-
-                                            <hr>
-                                        </div>
+                                                <hr>
+                                            </div>
+                                        @endfor
 
                                         <div class="row row-head">
                                             <div class="col-md-12" style="text-align: left; margin: auto;">
@@ -689,43 +607,26 @@
 
                                         <br>
 
-                                        <div class="row">
-                                            {{ $input(3, 'bc-manning1', 'Manning Agent') }}
-                                            {{ $input(3, 'bc-name1', 'Contact Person') }}
-                                            {{ $input(3, 'bc-designation1', 'Designation') }}
-                                            {{ $input(3, 'bc-contact1', 'Contact Number') }}
+                                        {{-- BACKGROUND CHECK --}}
+                                        @for($i = 1; $i <= 5; $i++)
+                                            <div class="row">
+                                                {{ $input(3, "bc-manning$i", "Manning Agent") }}
+                                                {{ $input(3, "bc-name$i", "Contact Person") }}
+                                                {{ $input(3, "bc-designation$i", "Designation") }}
+                                                {{ $input(3, "bc-contact$i", "Contact Number") }}
 
-                                            <hr>
-                                        </div>
-
-                                        <div class="row">
-                                            {{ $input(3, 'bc-manning2', 'Manning Agent') }}
-                                            {{ $input(3, 'bc-name2', 'Contact Person') }}
-                                            {{ $input(3, 'bc-designation2', 'Designation') }}
-                                            {{ $input(3, 'bc-contact2', 'Contact Number') }}
-
-                                            <hr>
-                                        </div>
-
-                                        <div class="row">
-                                            {{ $input(3, 'bc-manning3', 'Manning Agent') }}
-                                            {{ $input(3, 'bc-name3', 'Contact Person') }}
-                                            {{ $input(3, 'bc-designation3', 'Designation') }}
-                                            {{ $input(3, 'bc-contact3', 'Contact Number') }}
-
-                                            <hr>
-                                        </div>
-
-                                        <div class="row">
-                                            {{ $input(3, 'bc-manning4', 'Manning Agent') }}
-                                            {{ $input(3, 'bc-name4', 'Contact Person') }}
-                                            {{ $input(3, 'bc-designation4', 'Designation') }}
-                                            {{ $input(3, 'bc-contact4', 'Contact Number') }}
-
-                                            <hr>
-                                        </div>
+                                                <hr>
+                                            </div>
+                                        @endfor
 
                                         {{-- END --}}
+
+                                        <div class="float-right" style="margin-top: 5px;">
+                                            <a class="btn btn-success" data-toggle="tooltip" title="Save" onclick="save()">
+                                                <i class="fas fa-save"></i> Save
+                                            </a>
+                                        </div>
+
                                     </div>
                                 </div>
                             </section>
@@ -746,8 +647,12 @@
         <script src="{{ asset('online/js/sweetalert2.min.js') }}"></script>
         <script src="{{ asset('online/js/custom.js') }}"></script>
         <script src="{{ asset('online/js/select2.min.js') }}"></script>
+        <script src="{{ asset('online/js/flatpickr.min.js') }}"></script>
 
         <script>
+            var ctr = 1; // FOR SS COUNTING
+            var rankCategory = null;
+
             $(document).ready(() => {
                 $('#rank-applied').select2({placeholder: "Select Rank"});
 
@@ -757,26 +662,39 @@
 
                     let category = $(e.target).find('option:selected').data('category');
 
-                    console.log(category);
-
-                    if(!category.includes("DECK")){
-                        $('.deck').hide();
-                    }
-                    if(!category.includes("ENGINE")){
+                    if(category.includes("DECK")){
                         $('.engine').hide();
+                        rankCategory = "Deck";
                     }
+                    else if(category.includes("ENGINE")){
+                        $('.deck').hide();
+                        rankCategory = "Engine";
+                    }
+                    else{
+                        $('.engine').hide();
+                        $('.deck').hide();
+                        rankCategory = "Galley";
+                    }
+                });
+
+                let config = {
+                };
+
+                $("[id$=issue_date], [id$=expiry_date], [id$=birthday], #birthday").flatpickr({
+                    altInput: true,
+                    altFormat: 'F j, Y',
+                    dateFormat: 'Y-m-d',
                 });
             });
 
             function addSS(){
-                let ctr = $('.ss').length;
-
                 let rows = [
                     ['Vessel Name', 'vname'],
                     ['Rank', 'rank'],
                     ['Vessel Type', 'vtype'],
                     ['Gross Tonnage', 'grt'],
-                    // ['Flag', 'flag'],
+                    ['Flag', 'flag'],
+                    ['KW', 'kw'],
                     ['Trade Route', 'trade'],
                     ['Salary', 'salary'],
                     ['Manning Agent', 'manning'],
@@ -790,16 +708,318 @@
                 let string = "";
                 rows.forEach(row => {
                     string += `
-                        <div class='col-md-2'>
+                        <div class='col-md-3'>
                             <div class='form-group'>
                                 <label for='${row[1]}'>${row[0]}</label>
-                                <input type='text' class='form-control ss-${row[1]}' placeholder='Enter ${row[0]}'>
+                                <input type='text' class='form-control' id='ss-${row[1]}${ctr}' placeholder='Enter ${row[0]}'>
                             </div>
                         </div>
                     `;
+
+                    if(row[0] == "Vessel Name"){
+                        string += "<div class='col-md-9'></div>";
+                    }
                 });
 
                 $('.ssrows').append(string + "<hr>");
+                $(`#ss-son${ctr}, #ss-soff${ctr}`).flatpickr({
+                    altInput: true,
+                    altFormat: 'F j, Y',
+                    dateFormat: 'Y-m-d'
+                });
+
+                ctr++; // +1 SS
+            }
+
+            function save(){
+                Swal.fire({
+                    icon: "info",
+                    title: "Confirmation",
+                    text: "Before proceeding, do you confirm that all info is accurate?",
+                    confirmButtonText: "Yes",
+                    confirmButtonColor: successColor,
+                    showCancelButton: true,
+                    cancelButtonColor: errorColor,
+                    cancelButtonText: "Back"
+                }).then(result => {
+                    if(result.value){
+                        checkInput();
+                    }
+                });
+            }
+
+            function checkInput(){
+                let crew = getCrewInfo();
+                let travelDocs = getTravelDocs();
+                let seaService = getSeaService();
+                let educBG = getEducBG();
+                let familyData = getFamilyData();
+                let additionalInfo = getadditionalInfo();
+                let recentVessel = rankCategory == "Deck" ? deckData() : rankCategory == "Engine" ? engineData() : null;
+                let bgCheck = getBgCheck();
+
+                console.log(crew, travelDocs, seaService, familyData, additionalInfo, recentVessel, bgCheck);
+                $.ajax({
+                    url: "{{ route('online.store') }}",
+                    type: "POST",
+                    data: {
+                        crew: crew,
+                        travelDocs: travelDocs,
+                        seaService: seaService,
+                        educBG: educBG,
+                        familyData: familyData,
+                        additionalInfo: additionalInfo,
+                        recentVessel: recentVessel,
+                        bgCheck: bgCheck,
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: result => {
+                        console.log(result);
+
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            text: "Kindly ask for confirmation from our Recruitment Department"
+                        });
+                    }
+                })
+            }
+
+            function getCrewInfo(){
+                return {
+                    fname: $('#fname').val(),
+                    mname: $('#mname').val(),
+                    lname: $('#lname').val(),
+                    birthday: $('#birthday').val(),
+                    address: $('#address').val(),
+                    contact: $('#contact').val(),
+                    birth_place: $('#place_of_birth').val(),
+                    religion: $('#religion').val(),
+                    height: $('#height').val(),
+                    weight: $('#weight').val(),
+                    blood_type: $('#blood_type').val(),
+                    civil_status: $('#civil_status').val(),
+                    provincial_address: $('#provincial_address').val(),
+                    provincial_contact: $('#provincial_contact').val(),
+                    rank_id: $('#rank-applied').val()
+                };
+            }
+
+            function getTravelDocs(){
+                return [
+                    {
+                        type: "PASSPORT",
+                        number: $('#p_number').val(),
+                        issue_date: $('#p_issue_date').val(),
+                        expiry_date: $('#p_expiry_date').val(),
+                    },
+                    {
+                        type: "SEAMAN'S BOOK",
+                        number: $('#sb_number').val(),
+                        issue_date: $('#sb_issue_date').val(),
+                        expiry_date: $('#sb_expiry_date').val(),
+                    },
+                    {
+                        type: "COC",
+                        number: $('#l_number').val(),
+                        issue_date: $('#l_issue_date').val(),
+                        expiry_date: $('#l_expiry_date').val(),
+                    },
+                    {
+                        type: "GMDSS/GOC",
+                        number: $('#g_number').val(),
+                        issue_date: $('#g_issue_date').val(),
+                        expiry_date: $('#g_expiry_date').val(),
+                    },
+                    {
+                        type: "COP",
+                        number: $('#cop_number').val(),
+                        issue_date: $('#cop_issue_date').val(),
+                        expiry_date: $('#cop_expiry_date').val(),
+                    },
+                    {
+                        type: "US-VISA",
+                        number: $('#usv_number').val(),
+                        issue_date: $('#usv_issue_date').val(),
+                        expiry_date: $('#usv_expiry_date').val(),
+                    }
+                ]
+            }
+
+            function getSeaService(){
+                let ss = [];
+
+                for(let i = 1; i < ctr; i++){
+                    ss.push({
+                        vessel_name: $(`#ss-vname${i}`).val(),
+                        rank: $(`#ss-rank${i}`).val(),
+                        vessel_type: $(`#ss-vtype${i}`).val(),
+                        gross_tonnage: $(`#ss-grt${i}`).val(),
+                        flag: $(`#ss-flag${i}`).val(),
+                        bhp_kw: $(`#ss-kw${i}`).val(),
+                        trade: $(`#ss-trade${i}`).val(),
+                        previous_salary: $(`#ss-salary${i}`).val(),
+                        manning_agent: $(`#ss-manning${i}`).val(),
+                        principal: $(`#ss-principal${i}`).val(),
+                        crew_nationality: $(`#ss-nationality${i}`).val(),
+                        sign_on: $(`#ss-son${i}`).val(),
+                        sign_off: $(`#ss-soff${i}`).val(),
+                        remarks: $(`#ss-remarks${i}`).val()
+                    });
+                }
+
+                return ss;
+            }
+
+            function getEducBG(){
+                return [
+                    {
+                        type: "Elementary",
+                        course: $('#eb-e-course').val(),
+                        year: $('#eb-e-year').val(),
+                        school: $('#eb-e-school').val(),
+                        address: $('#eb-e-address').val()
+                    },
+                    {
+                        type: "High School",
+                        course: $('#eb-hs-course').val(),
+                        year: $('#eb-hs-year').val(),
+                        school: $('#eb-hs-school').val(),
+                        address: $('#eb-hs-address').val()
+                    },
+                    {
+                        type: "College",
+                        course: $('#eb-c-course').val(),
+                        year: $('#eb-c-year').val(),
+                        school: $('#eb-c-school').val(),
+                        address: $('#eb-c-address').val()
+                    },
+                ];
+            }
+
+            function getFamilyData(){
+                let fd = [
+                    {
+                        type: "Father",
+                        fname: $('#fd-f-fname').val(),
+                        mname: $('#fd-f-mname').val(),
+                        lname: $('#fd-f-lname').val(),
+                        birthday: $('#fd-f-birthday').val(),
+                        contact: $('#fd-f-contact').val(),
+                        occupation: $('#fd-f-occupation').val(),
+                        address: $('#fd-f-address').val(),
+                    },
+                    {
+                        type: "Mother",
+                        fname: $('#fd-m-fname').val(),
+                        mname: $('#fd-m-mname').val(),
+                        lname: $('#fd-m-lname').val(),
+                        birthday: $('#fd-m-birthday').val(),
+                        contact: $('#fd-m-contact').val(),
+                        occupation: $('#fd-m-occupation').val(),
+                        address: $('#fd-m-address').val(),
+                    },
+                    {
+                        type: "Spouse",
+                        fname: $('#fd-s-fname').val(),
+                        mname: $('#fd-s-mname').val(),
+                        lname: $('#fd-s-lname').val(),
+                        birthday: $('#fd-s-birthday').val(),
+                        contact: $('#fd-s-contact').val(),
+                        occupation: $('#fd-s-occupation').val(),
+                        address: $('#fd-s-address').val(),
+                    },
+                ];
+
+                for(let i = 1; i <= 4; i++){
+                    fd.push({
+                        type: "Children",
+                        fname: $(`#fd-c${i}-fname`).val(),
+                        mname: $(`#fd-c${i}-mname`).val(),
+                        lname: $(`#fd-c${i}-lname`).val(),
+                        birthday: $(`#fd-c${i}-birthday`).val(),
+                        contact: $(`#fd-c${i}-contact`).val(),
+                        occupation: $(`#fd-c${i}-occupation`).val(),
+                        address: $(`#fd-c${i}-address`).val(),
+                    });
+                }
+
+                for(let i = 1; i <= 2; i++){
+                    fd.push({
+                        type: "Beneficiary",
+                        fname: $(`#fd-b${i}-fname`).val(),
+                        mname: $(`#fd-b${i}-mname`).val(),
+                        lname: $(`#fd-b${i}-lname`).val(),
+                        birthday: $(`#fd-b${i}-birthday`).val(),
+                        contact: $(`#fd-b${i}-contact`).val(),
+                        occupation: $(`#fd-b${i}-occupation`).val(),
+                        address: $(`#fd-b${i}-address`).val(),
+                    });
+                }
+
+                return fd;
+            }
+
+            function getadditionalInfo(){
+                return {
+                    tin: $('#tin').val(),
+                    sss: $('#sss').val(),
+                    shoe_size: $('#shoe_size').val(),
+                    clothes_size: $('#clothes_size').val(),
+                    waistline: $('#waist').val(),
+                    sid: $('#sid').val(),
+                    ereg: $('#EREG').val(),
+                    parka: $('#PARKA').val(),
+                };
+            }
+
+            function deckData(){
+                let dd = [];
+
+                for(let i = 1; i <= 5; i++){
+                    dd.push({
+                        vessel_name: $(`#dc-vname${i}`).val(),
+                        type_of_cargo: $(`#dc-vtype${i}`).val(),
+                        loading_port: $(`#dc-lport${i}`).val(),
+                        discharging_port: $(`#dc-dport${i}`).val(),
+                        ship_manager: $(`#dc-smanager${i}`).val(),
+                        charterer: $(`#dc-charterer${i}`).val(),
+                    })
+                };
+
+                return dd;
+            }
+
+            function engineData(){
+                let ed = [];
+
+                for(let i = 1; i <= 5; i++){
+                    ed.push({
+                        vessel_name: $(`#ec-vname${i}`).val(),
+                        main_engine: $(`#ec-engine${i}`).val(),
+                        aux_engine: $(`#ec-auengine${i}`).val(),
+                        ballast_system: $(`#ec-ballast${i}`).val(),
+                        ship_manager: $(`#ec-smanager${i}`).val(),
+                        charterer: $(`#ec-charterer${i}`).val(),
+                    })
+                };
+
+                return ed;
+            }
+
+            function getBgCheck(){
+                let bg = [];
+
+                for(let i = 1; i <= 4; i++){
+                    bg.push({
+                        manning_agent: $(`#bc-manning${i}`).val(),
+                        name: $(`#bc-name${i}`).val(),
+                        designation: $(`#bc-designation${i}`).val(),
+                        contact: $(`#bc-contact${i}`).val()
+                    });
+                }
+
+                return bg;
             }
         </script>
     </body>
