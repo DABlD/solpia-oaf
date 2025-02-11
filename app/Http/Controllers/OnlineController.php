@@ -17,6 +17,12 @@ class OnlineController extends Controller
         ]);
     }
 
+    public function privacy(Request $req){
+        return $this->_view('privacy', [
+            'title'         => 'Privacy Policy'
+        ]);
+    }
+
     public function store(Request $req){
         // SAVE CREW
         $crew = new Crew();

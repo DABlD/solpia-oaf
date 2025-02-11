@@ -735,12 +735,29 @@
                 Swal.fire({
                     icon: "info",
                     title: "Confirmation",
-                    text: "Before proceeding, do you confirm that all info is accurate?",
+                    // text: "Before proceeding, do you confirm that all info is accurate?",
+                    html: `
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-10" style="text-align: left;">
+                                <input type="checkbox" id="confirm1">
+                                All information is correct and accurate
+                                <br>
+                                <input type="checkbox" id="confirm2">
+                                I agree to the <a href="{{ route('online.privacy-policy') }}" target="_blank">Privacy Policy</a>
+                            </div>
+                        </div>
+                    `,
                     confirmButtonText: "Yes",
                     confirmButtonColor: successColor,
                     showCancelButton: true,
                     cancelButtonColor: errorColor,
-                    cancelButtonText: "Back"
+                    cancelButtonText: "Back",
+                    preConfirm: () => {
+                        if(!$('#confirm1').is(":checked") || !$('#confirm2').is(":checked")){
+                            Swal.showValidationMessage("You must confirm that the information is accurate and that you agree to our Privacy Policy");
+                        }
+                    }
                 }).then(result => {
                     if(result.value){
                         checkInput();
