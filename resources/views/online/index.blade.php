@@ -796,7 +796,7 @@
                         Swal.fire({
                             icon: "success",
                             title: "Success",
-                            text: "Kindly ask for confirmation from our Recruitment Department"
+                            text: "Kindly ask for confirmation from Recruitment"
                         });
                     }
                 })
