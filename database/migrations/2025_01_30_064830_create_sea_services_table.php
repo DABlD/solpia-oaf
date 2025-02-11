@@ -21,6 +21,8 @@ class CreateSeaServicesTable extends Migration
             $table->string('vessel_name')->nullable();
             $table->string('rank')->nullable();
             $table->string('gross_tonnage')->nullable();
+            $table->string('flag')->nullable();
+            $table->string('kw')->nullable();
             $table->string('trade')->nullable();
             $table->string('salary')->nullable();
             $table->string('manning_agent')->nullable();
