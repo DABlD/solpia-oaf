@@ -19,16 +19,16 @@ class CreateSeaServicesTable extends Migration
             $table->integer('crew_id')->unsigned();
 
             $table->string('vessel_name')->nullable();
-            $table->string('type')->nullable();
+            $table->string('vessel_type')->nullable();
             $table->string('rank')->nullable();
             $table->string('gross_tonnage')->nullable();
             $table->string('flag')->nullable();
-            $table->string('kw')->nullable();
+            $table->string('bhp_kw')->nullable();
             $table->string('trade')->nullable();
-            $table->string('salary')->nullable();
+            $table->string('previous_salary')->nullable();
             $table->string('manning_agent')->nullable();
             $table->string('principal')->nullable();
-            $table->string('nationality')->nullable();
+            $table->string('crew_nationality')->nullable();
             $table->date('sign_on')->nullable();
             $table->date('sign_off')->nullable();
             $table->text('remarks')->nullable();

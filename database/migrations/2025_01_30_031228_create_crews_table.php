@@ -13,7 +13,7 @@ class CreateCrewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('crew', function (Blueprint $table) {
+        Schema::create('crews', function (Blueprint $table) {
             $table->id();
 
             $table->string('fname')->nullable();
