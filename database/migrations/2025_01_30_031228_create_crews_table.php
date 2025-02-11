@@ -41,6 +41,9 @@ class CreateCrewsTable extends Migration
             $table->string('ereg')->nullable();
             $table->string('parka')->nullable();
 
+            $table->integer('rank_id')->unsigned()->nullable();
+            $table->string('higher_license')->nullable();
+
             $table->boolean('synced')->default(false);
 
             $table->timestamps();
