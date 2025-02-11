@@ -19,18 +19,20 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function(){
-   return redirect()->route('login');
-});
-
+// Route::get('/', function(){
+//    return redirect()->route('login');
+// });
+Route::get('/','OnlineController@index')->name('online.apply');
+Route::post('store','OnlineController@store')->name('online.store');
+Route::get('update','OnlineController@update')->name('online.update');
 
 Route::group([
         'middleware' => 'auth',
     ], function() {
-        Route::get('/', "DashboardController@index")->name('dashboard');
+        // Route::get('/', "DashboardController@index")->name('dashboard');
 
 
-        Route::get('/', 'DashboardController@index')
+        Route::get('/dashboard', 'DashboardController@index')
             ->defaults('sidebar', 1)
             ->defaults('icon', 'fas fa-list')
             ->defaults('name', 'Dashboard')
