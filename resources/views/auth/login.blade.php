@@ -5,12 +5,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="{{ asset('fonts/fontawesome.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/auth/animate.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/auth/hamburgers.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/auth/util.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/auth/main.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('fonts-bak/fontawesome.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css-bak/auth/animate.css') }}">
+	<link rel="stylesheet" href="{{ asset('css-bak/auth/hamburgers.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css-bak/auth/util.css') }}">
+	<link rel="stylesheet" href="{{ asset('css-bak/auth/main.css') }}">
+	<link rel="stylesheet" href="{{ asset('css-bak/sweetalert2.min.css') }}">
 
 	<style>
 	@if(isset($theme['login_bg_img']))
@@ -83,11 +83,11 @@
 		</div>
 	</div>
 
-	<script src="{{ asset('js/jquery.min.js') }}"></script>
-	<script src="{{ asset('js/bootstrap-bundle.min.js') }}"></script>
-	<script src="{{ asset('js/auth/tilt.js') }}"></script>
-	<script src="{{ asset('js/auth/main.js') }}"></script>
-	<script src="{{ asset('js/sweetalert2.min.js') }}"></script>
+	<script src="{{ asset('js-bak/jquery.min.js') }}"></script>
+	<script src="{{ asset('js-bak/bootstrap-bundle.min.js') }}"></script>
+	<script src="{{ asset('js-bak/auth/tilt.js') }}"></script>
+	<script src="{{ asset('js-bak/auth/main.js') }}"></script>
+	<script src="{{ asset('js-bak/sweetalert2.min.js') }}"></script>
 	<script >
 		$('.js-tilt').tilt({
 			scale: 1.1

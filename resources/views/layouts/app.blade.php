@@ -7,15 +7,15 @@
         <title>{{ env("APP_NAME") . " | " . $title }}</title>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <link rel="stylesheet" href="{{ asset('fonts/fontawesome.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/temposdusmus-bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/icheck-boostrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/overlayScrollbar.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/flatpickr.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('fonts-bak/fontawesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css-bak/ionicons.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css-bak/temposdusmus-bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css-bak/icheck-boostrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css-bak/adminlte.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css-bak/overlayScrollbar.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css-bak/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('css-bak/sweetalert2.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css-bak/flatpickr.min.css') }}">
 
         @yield('styles')
 
@@ -57,16 +57,16 @@
             </footer> -->
         </div>
 
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('js-bak/jquery.min.js') }}"></script>
+        <script src="{{ asset('js-bak/jquery-ui.min.js') }}"></script>
         <script>$.widget.bridge('uibutton', $.ui.button)</script>
-        <script src="{{ asset('js/bootstrap-bundle.min.js') }}"></script>
-        <script src="{{ asset('js/moment.min.js') }}"></script>
-        <script src="{{ asset('js/temposdusmus-bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/overlayScrollbar.min.js') }}"></script>
-        <script src="{{ asset('js/adminlte.min.js') }}"></script>
-        <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
-        <script src="{{ asset('js/custom.js') }}"></script>
+        <script src="{{ asset('js-bak/bootstrap-bundle.min.js') }}"></script>
+        <script src="{{ asset('js-bak/moment.min.js') }}"></script>
+        <script src="{{ asset('js-bak/temposdusmus-bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js-bak/overlayScrollbar.min.js') }}"></script>
+        <script src="{{ asset('js-bak/adminlte.min.js') }}"></script>
+        <script src="{{ asset('js-bak/sweetalert2.min.js') }}"></script>
+        <script src="{{ asset('js-bak/custom.js') }}"></script>
 
         <script>
             @if(session('success'))
