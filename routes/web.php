@@ -66,6 +66,27 @@ Route::group([
             }
         );
 
+        // CREW ROUTES
+        $cname = "crew";
+        Route::group([
+                'as' => "$cname.",
+                'prefix' => "$cname/"
+            ], function () use($cname){
+
+                Route::get("/", ucfirst($cname) . "Controller@index")
+                    ->defaults("sidebar", 1)
+                    ->defaults("icon", "fas fa-user-helmet-safety")
+                    ->defaults("name", ucfirst($cname))
+                    ->defaults("roles", array("Admin"))
+                    // ->defaults("group", "Settings")
+                    ->name($cname)
+                    ->defaults("href", "/$cname");
+
+                Route::get("get/", ucfirst($cname) . "Controller@get")->name('get');
+                Route::get("exportForm/", ucfirst($cname) . "Controller@exportForm")->name('exportForm');
+            }
+        );
+
         // THEME ROUTES
         $cname = "theme";
         Route::group([
@@ -85,6 +106,7 @@ Route::group([
             ], function () use($cname){
 
                 Route::get("user", ucfirst($cname) . "Controller@user")->name('user');
+                Route::get("crew", ucfirst($cname) . "Controller@crew")->name('crew');
             }
         );
     }
