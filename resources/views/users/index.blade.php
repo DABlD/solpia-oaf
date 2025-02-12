@@ -43,17 +43,17 @@
 @endsection
 
 @push('styles')
-	<link rel="stylesheet" href="{{ asset('css/datatables.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/datatables.bundle.min.css') }}">
-	{{-- <link rel="stylesheet" href="{{ asset('css/datatables.bootstrap4.min.css') }}"> --}}
-	{{-- <link rel="stylesheet" href="{{ asset('css/datatables-jquery.min.css') }}"> --}}
+	<link rel="stylesheet" href="{{ asset('css-bak/datatables.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css-bak/datatables.bundle.min.css') }}">
+	{{-- <link rel="stylesheet" href="{{ asset('css-bak/datatables.bootstrap4.min.css') }}"> --}}
+	{{-- <link rel="stylesheet" href="{{ asset('css-bak/datatables-jquery.min.css') }}"> --}}
 @endpush
 
 @push('scripts')
-	<script src="{{ asset('js/datatables.min.js') }}"></script>
-	<script src="{{ asset('js/datatables.bundle.min.js') }}"></script>
-	{{-- <script src="{{ asset('js/datatables.bootstrap4.min.js') }}"></script> --}}
-	{{-- <script src="{{ asset('js/datatables-jquery.min.js') }}"></script> --}}
+	<script src="{{ asset('js-bak/datatables.min.js') }}"></script>
+	<script src="{{ asset('js-bak/datatables.bundle.min.js') }}"></script>
+	{{-- <script src="{{ asset('js-bak/datatables.bootstrap4.min.js') }}"></script> --}}
+	{{-- <script src="{{ asset('js-bak/datatables-jquery.min.js') }}"></script> --}}
 
 	<script>
 		$(document).ready(()=> {

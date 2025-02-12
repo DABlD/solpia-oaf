@@ -85,7 +85,7 @@
 </aside>
 
 @push('scripts')
-    <script src="{{ asset('js/flatpickr.min.js') }}"></script>
+    <script src="{{ asset('js-bak/flatpickr.min.js') }}"></script>
     <script>
         $('#profile').on('click', () => {
             $.ajax({
