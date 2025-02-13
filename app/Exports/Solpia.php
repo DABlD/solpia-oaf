@@ -260,7 +260,7 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
                 $event->sheet->getDelegate()->getPageMargins()->setFooter(0.1);
                 $event->sheet->getDelegate()->getPageSetup()->setHorizontalCentered(true);
                 // $event->sheet->getDelegate()->getPageSetup()->setVerticalCentered(true);
-                $event->sheet->getDelegate()->getHeaderFooter()->setOddHeader("&R Page &P of &N");
+                // $event->sheet->getDelegate()->getHeaderFooter()->setOddHeader("&R Page &P of &N");
                 $event->sheet->getDelegate()->getHeaderFooter()->setOddFooter("&LDoc No.: SMOP-IS-02 &CEffective Date: 05 FEB 2025 &RRevision No.: 04");
 
                 // SET PAGE BREAK PREVIEW
