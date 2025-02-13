@@ -350,6 +350,7 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
 
                 // SHRINK TO FIT
                 $h['stf'] = [
+                    'B26:Y35'
                 ];
 
                 foreach($h as $key => $value) {
