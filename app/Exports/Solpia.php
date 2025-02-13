@@ -19,7 +19,7 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
     public function view(): View
     {
         return view('exports.solpia-form', [
-            'data' => $this->data,
+            'crew' => $this->data,
         ]);
     }
 
@@ -260,6 +260,7 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
                 $event->sheet->getDelegate()->getPageMargins()->setFooter(0.1);
                 $event->sheet->getDelegate()->getPageSetup()->setHorizontalCentered(true);
                 // $event->sheet->getDelegate()->getPageSetup()->setVerticalCentered(true);
+                $event->sheet->getDelegate()->getHeaderFooter()->setOddFooter("&LDoc No.: SMOP-IS-02 &CEffective Date: 05 FEB 2025 &RRevision No.: 04");
 
                 // SET PAGE BREAK PREVIEW
                 $temp = new \PhpOffice\PhpSpreadsheet\Worksheet\SheetView;
@@ -301,7 +302,7 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
 
                 // VT
                 $h[1] = [
-                    
+                    'V37'
                 ];
 
                 // HL B
@@ -311,12 +312,12 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
 
                 // HC
                 $h[3] = [
-                    'B11', 'S10:Y10'
+                    'B11', 'S10:Y10', 'B23', 'S13:S15', 'S17:S19', 'V36:V37', 'T11:Y22'
                 ];
 
                 // HC VC
                 $h[4] = [
-                    'X2', 'D6:D7',
+                    'X2', 'D6:D7', 'B24:Y35'
                 ];
 
                 // HL
@@ -325,12 +326,12 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
 
                 // B
                 $h[6] = [
-                    'D6:D7',
+                    'D6:D7', 'S10:Y10', 'B23', 'B36', 'V37'
                 ];
 
                 // VC
                 $h[7] = [
-                    'B9:M9'
+                    'B9:Y35'
                 ];
 
                 // UNDERLINE
@@ -340,9 +341,11 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
 
                 // JUSTIFY
                 $h[9] = [
+                    'B36'
                 ];
 
                 $h['wrap'] = [
+                    'B24:Y25'
                 ];
 
                 // SHRINK TO FIT
@@ -386,12 +389,12 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
 
                 // ALL BORDER THIN
                 $cells[0] = array_merge([
-                    'B2:C4',
-                    'H11:Q12', 'S10:Y12'
+                    'B2:C4', 'H11:Q22', 'S11:Y22', 'B13:F21', 'B24:Y35'
                 ]);
 
                 // ALL BORDER MEDIUM
                 $cells[1] = array_merge([
+                    'S10:Y10',
                 ]);
 
                 // ALL BORDER THICK
@@ -401,12 +404,12 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
                 // OUTSIDE BORDER THIN
                 $cells[3] = array_merge([
                     'B9:C9', 'E9:L9', 'N9:P9',
-                    'B11:F12'
                 ]);
 
                 // OUTSIDE BORDER MEDIUM
                 $cells[4] = array_merge([
-                    "A1:Z37", 'X2:Y8'
+                    "A1:Z35", 'X2:Y8', 'B11:F21', 'H11:Q22', 'S11:Y22',
+                    'B24:C35','D24:E35','F24:H35','I24:I35','J24:J35','K24:K35','L24:M35','N24:N35','O24:O35','P24:R35','S24:S35','T24:U35','V24:W35','X24:X35','Y24:Y35'
                 ]);
 
                 // OUTSIDE BORDER THICK
@@ -440,6 +443,7 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
 
                 // BBT
                 $cells[12] = array_merge([
+                    'V36:Y36'
                 ]);
 
                 // LBT
@@ -468,18 +472,18 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
                 $event->sheet->getDelegate()->getColumnDimension('D')->setWidth(4.7 + $plus);
                 $event->sheet->getDelegate()->getColumnDimension('E')->setWidth(3.2 + $plus);
                 $event->sheet->getDelegate()->getColumnDimension('F')->setWidth(5.7 + $plus);
-                $event->sheet->getDelegate()->getColumnDimension('G')->setWidth(1.4);
+                $event->sheet->getDelegate()->getColumnDimension('G')->setWidth(1.2);
                 $event->sheet->getDelegate()->getColumnDimension('H')->setWidth(4 + $plus);
                 // $event->sheet->getDelegate()->getColumnDimension('I')->setWidth(2 + $plus);
                 // $event->sheet->getDelegate()->getColumnDimension('J')->setWidth(2 + $plus);
-                // $event->sheet->getDelegate()->getColumnDimension('K')->setWidth(2 + $plus);
+                $event->sheet->getDelegate()->getColumnDimension('K')->setWidth(6.5 + $plus);
                 $event->sheet->getDelegate()->getColumnDimension('L')->setWidth(3.2 + $plus);
                 // $event->sheet->getDelegate()->getColumnDimension('M')->setWidth(2 + $plus);
-                // $event->sheet->getDelegate()->getColumnDimension('N')->setWidth(2 + $plus);
+                $event->sheet->getDelegate()->getColumnDimension('N')->setWidth(6.5 + $plus);
                 $event->sheet->getDelegate()->getColumnDimension('O')->setWidth(18 + $plus);
                 $event->sheet->getDelegate()->getColumnDimension('P')->setWidth(16 + $plus);
-                $event->sheet->getDelegate()->getColumnDimension('Q')->setWidth(4 + $plus);
-                $event->sheet->getDelegate()->getColumnDimension('R')->setWidth(1.4);
+                $event->sheet->getDelegate()->getColumnDimension('Q')->setWidth(1 + $plus);
+                $event->sheet->getDelegate()->getColumnDimension('R')->setWidth(1.2);
                 $event->sheet->getDelegate()->getColumnDimension('S')->setWidth(16 + $plus);
                 $event->sheet->getDelegate()->getColumnDimension('T')->setWidth(8 + $plus);
                 $event->sheet->getDelegate()->getColumnDimension('U')->setWidth(4 + $plus);
@@ -491,10 +495,10 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
 
                 // ROW RESIZE
                 $rows = [
-                    // [
-                    //     12, //ROW HEIGHT
-                    //     1,4 //START ROW, END ROW
-                    // ],
+                    [
+                        16, //ROW HEIGHT
+                        9,37 //START ROW, END ROW
+                    ],
                 ];
 
                 $rows2 = [
@@ -502,7 +506,7 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
                         4,
                         [1]
                     ],
-                    [20,[5]],
+                    [20,[5]],[20,[36,37]],
                 ];
 
                 foreach($rows as $row){
@@ -530,6 +534,9 @@ class Solpia implements FromView, WithEvents, WithDrawings//, ShouldAutoSize
                 $event->sheet->getDelegate()->getStyle('B2:B4')->getFont()->setSize(6);
                 // $event->sheet->getDelegate()->getStyle('A1:L150')->getFont()->setName('Arial');
                 $event->sheet->getDelegate()->getStyle('D6')->getFont()->setSize(16)->setName('Arial');
+                $event->sheet->getDelegate()->getStyle('B11')->getFont()->setName('Arial Narrow')->setSize(6);
+                $event->sheet->getDelegate()->getStyle('B23')->getFont()->setName('Arial Narrow')->setSize(10);
+                $event->sheet->getDelegate()->getStyle('B36')->getFont()->setName('Arial Narrow')->setSize(8);
                 // $event->sheet->getDelegate()->getStyle('D6')->getFont()->setName('Arial');
             },
         ];
