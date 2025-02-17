@@ -260,9 +260,9 @@
 
 	<tr>
 		<td colspan="3">1. {{ $type == "E" ? $crew->recent_vessel[$i]->vessel_name : "" }}</td>
-		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->type_of_cargo : "" }}</td>
-		<td colspan="4">{{ $type == "E" ? $crew->recent_vessel[$i]->loading_port : "" }}</td>
-		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->discharging_port : "" }}</td>
+		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->main_engine : "" }}</td>
+		<td colspan="4">{{ $type == "E" ? $crew->recent_vessel[$i]->aux_engine : "" }}</td>
+		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->ballast_system : "" }}</td>
 		<td>{{ $type == "E" ? $crew->recent_vessel[$i]->ship_manager : "" }}</td>
 		<td colspan="2">{{ $type == "E" ? $crew->recent_vessel[$i]->charterer : "" }}</td>
 	</tr>
@@ -272,9 +272,9 @@
 	@endphp
 	<tr>
 		<td colspan="3">2. {{ $type == "E" ? $crew->recent_vessel[$i]->vessel_name : "" }}</td>
-		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->type_of_cargo : "" }}</td>
-		<td colspan="4">{{ $type == "E" ? $crew->recent_vessel[$i]->loading_port : "" }}</td>
-		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->discharging_port : "" }}</td>
+		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->main_engine : "" }}</td>
+		<td colspan="4">{{ $type == "E" ? $crew->recent_vessel[$i]->aux_engine : "" }}</td>
+		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->ballast_system : "" }}</td>
 		<td>{{ $type == "E" ? $crew->recent_vessel[$i]->ship_manager : "" }}</td>
 		<td colspan="2">{{ $type == "E" ? $crew->recent_vessel[$i]->charterer : "" }}</td>
 	</tr>
@@ -284,9 +284,9 @@
 	@endphp
 	<tr>
 		<td colspan="3">3. {{ $type == "E" ? $crew->recent_vessel[$i]->vessel_name : "" }}</td>
-		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->type_of_cargo : "" }}</td>
-		<td colspan="4">{{ $type == "E" ? $crew->recent_vessel[$i]->loading_port : "" }}</td>
-		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->discharging_port : "" }}</td>
+		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->main_engine : "" }}</td>
+		<td colspan="4">{{ $type == "E" ? $crew->recent_vessel[$i]->aux_engine : "" }}</td>
+		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->ballast_system : "" }}</td>
 		<td>{{ $type == "E" ? $crew->recent_vessel[$i]->ship_manager : "" }}</td>
 		<td colspan="2">{{ $type == "E" ? $crew->recent_vessel[$i]->charterer : "" }}</td>
 	</tr>
@@ -296,9 +296,9 @@
 	@endphp
 	<tr>
 		<td colspan="3">4. {{ $type == "E" ? $crew->recent_vessel[$i]->vessel_name : "" }}</td>
-		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->type_of_cargo : "" }}</td>
-		<td colspan="4">{{ $type == "E" ? $crew->recent_vessel[$i]->loading_port : "" }}</td>
-		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->discharging_port : "" }}</td>
+		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->main_engine : "" }}</td>
+		<td colspan="4">{{ $type == "E" ? $crew->recent_vessel[$i]->aux_engine : "" }}</td>
+		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->ballast_system : "" }}</td>
 		<td>{{ $type == "E" ? $crew->recent_vessel[$i]->ship_manager : "" }}</td>
 		<td colspan="2">{{ $type == "E" ? $crew->recent_vessel[$i]->charterer : "" }}</td>
 	</tr>
@@ -308,9 +308,9 @@
 	@endphp
 	<tr>
 		<td colspan="3">5. {{ $type == "E" ? $crew->recent_vessel[$i]->vessel_name : "" }}</td>
-		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->type_of_cargo : "" }}</td>
-		<td colspan="4">{{ $type == "E" ? $crew->recent_vessel[$i]->loading_port : "" }}</td>
-		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->discharging_port : "" }}</td>
+		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->main_engine : "" }}</td>
+		<td colspan="4">{{ $type == "E" ? $crew->recent_vessel[$i]->aux_engine : "" }}</td>
+		<td colspan="5">{{ $type == "E" ? $crew->recent_vessel[$i]->ballast_system : "" }}</td>
 		<td>{{ $type == "E" ? $crew->recent_vessel[$i]->ship_manager : "" }}</td>
 		<td colspan="2">{{ $type == "E" ? $crew->recent_vessel[$i]->charterer : "" }}</td>
 	</tr>
