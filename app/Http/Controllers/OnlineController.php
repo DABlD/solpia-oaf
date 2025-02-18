@@ -17,6 +17,17 @@ class OnlineController extends Controller
         ]);
     }
 
+    public function update(Request $req){
+        $ranks = Rank::select('id', 'name', 'abbr', 'category')->get();
+
+        $crew;
+        return $this->_view('update', [
+            'title'         => 'SOLPIA ONLINE APPLICATION',
+            'categories'    => $ranks->groupBy('category'),
+            // 'crew'          => Crew::where('')
+        ]);
+    }
+
     public function privacy(Request $req){
         return $this->_view('privacy', [
             'title'         => 'Privacy Policy'
@@ -51,7 +62,11 @@ class OnlineController extends Controller
         $crew->ereg = $req->additionalInfo['ereg'];
         $crew->parka = $req->additionalInfo['parka'];
 
+        //CHECK FOR DUPLICATES BEFORE SAVING
+        Crew::where('fname', $crew->fname)->where('mname', $crew->mname)->where('lname', $crew->lname)->where('birthday', $crew->birthday)->delete();
+
         $crew->save();
+
 
         // SAVE DOCUMENTS
         foreach($req->travelDocs as $docu){
