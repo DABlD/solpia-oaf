@@ -73,6 +73,7 @@
 					{data: 'actions'},
 				],
         		pageLength: 25,
+        		order: [[0, 'asc']],
 				// drawCallback: function(){
 				// 	init();
 				// }
