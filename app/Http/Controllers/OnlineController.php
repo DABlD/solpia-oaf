@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Rank};
+use App\Models\{Rank, Backup};
 use App\Models\{Crew, Document, SeaService, BackgroundCheck, EducationalBackground, FamilyData, RecentVessel};
 
 class OnlineController extends Controller
@@ -35,6 +35,10 @@ class OnlineController extends Controller
     }
 
     public function store(Request $req){
+        $temp = new Backup();
+        $temp->string = json_encode($req->all());
+        $temp->save();
+
         // SAVE CREW
         $crew = new Crew();
         $crew->fname = $req->crew['fname'];
@@ -66,7 +70,6 @@ class OnlineController extends Controller
         Crew::where('fname', $crew->fname)->where('mname', $crew->mname)->where('lname', $crew->lname)->where('birthday', $crew->birthday)->delete();
 
         $crew->save();
-
 
         // SAVE DOCUMENTS
         foreach($req->travelDocs as $docu){
