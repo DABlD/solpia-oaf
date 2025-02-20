@@ -45,8 +45,8 @@ class OnlineController extends Controller
         $crew->contact = $req->crew['contact'];
         $crew->birth_place = $req->crew['birth_place'];
         $crew->religion = $req->crew['religion'];
-        $crew->height = $req->crew['height'];
-        $crew->weight = $req->crew['weight'];
+        $crew->height = preg_replace("/[^0-9.]/", '', $req->crew['height']);
+        $crew->weight = preg_replace("/[^0-9.]/", '', $req->crew['weight']);
         $crew->blood_type = $req->crew['blood_type'];
         $crew->civil_status = $req->crew['civil_status'];
         $crew->provincial_address = $req->crew['provincial_address'];
