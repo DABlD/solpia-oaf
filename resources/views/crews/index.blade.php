@@ -21,6 +21,7 @@
                     		<thead>
                     			<tr>
                     				<th>ID</th>
+                    				<th>Rank</th>
                     				<th>FName</th>
                     				<th>MName</th>
                     				<th>Lname</th>
@@ -67,6 +68,7 @@
 				},
 				columns: [
 					{data: 'id'},
+					{data: 'rank.abbr'},
 					{data: 'fname'},
 					{data: 'mname'},
 					{data: 'lname'},

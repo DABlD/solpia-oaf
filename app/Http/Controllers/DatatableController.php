@@ -84,6 +84,7 @@ class DatatableController extends Controller
         // FOR ACTIONS
         foreach($array as $item){
             $item->actions = $item->actions;
+            $item->rank = $item->rank;
         }
 
         // IF HAS LOAD
