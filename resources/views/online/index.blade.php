@@ -240,11 +240,17 @@
                                                     Sea Service
                                                 </b>
 
-                                                <div class="float-right" style="margin-top: 5px;">
-                                                    <a class="btn btn-success btn-sm" data-toggle="tooltip" title="Add" onclick="addSS()">
-                                                        <i class="fas fa-plus"></i>
-                                                    </a>
-                                                </div>
+                                                &nbsp;
+
+                                                <a class="btn btn-success btn-sm" data-toggle="tooltip" title="Add" onclick="addSS()">
+                                                    <i class="fas fa-plus"></i>
+                                                </a>
+
+                                                <span style="font-size: 12px; color: red; font-weight: bold;">
+                                                    Click button to add record
+                                                </span>
+                                                {{-- <div class="float-right" style="margin-top: 5px;">
+                                                </div> --}}
                                             </div>
                                         </div>
 
