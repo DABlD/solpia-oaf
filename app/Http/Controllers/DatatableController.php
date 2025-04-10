@@ -73,6 +73,8 @@ class DatatableController extends Controller
             $array = $array->where($req->where2[0], isset($req->where2[2]) ? $req->where2[1] : "=", $req->where2[2] ?? $req->where2[1]);
         }
 
+        $array = $array->whereNotNull('rank_id');
+
         // IF HAS JOIN
         // if($req->join){
         //     $alias = substr($req->join, 1);
