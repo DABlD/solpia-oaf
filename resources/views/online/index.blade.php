@@ -155,13 +155,16 @@
                                             {{ $input(3, 'blood_type', 'Blood Type') }}
 
                                             <div class="col-md-3">
-                                                <select id="rank-applied" class="form-control">
-                                                    <option>Select Status</option>
-                                                    <option value="Single">Single</option>
-                                                    <option value="Married">Married</option>
-                                                    <option value="Widowed">Widowed</option>
-                                                    <option value="Divorced">Divorced</option>
-                                                </select>
+                                                <div class="form-group">
+                                                    <label for="blood_type">Blood Type</label>
+                                                    <select id="rank-applied" class="form-control">
+                                                        <option>Select Status</option>
+                                                        <option value="Single">Single</option>
+                                                        <option value="Married">Married</option>
+                                                        <option value="Widowed">Widowed</option>
+                                                        <option value="Divorced">Divorced</option>
+                                                    </select>
+                                                </div>
                                             </div>
 
                                             {{ $input(12, 'address', 'Metro Manila Address') }}
