@@ -58,6 +58,10 @@ class DatatableController extends Controller
     public function crew(Request $req){
         $array = Crew::select($req->select);
 
+        $filters = $req->filters;
+
+        $array->where('rank_id', 'like', $filters['fRank']);
+
         // IF HAS SORT PARAMETER $ORDER
         if($req->order){
             $array = $array->orderBy($req->order[0], $req->order[1]);

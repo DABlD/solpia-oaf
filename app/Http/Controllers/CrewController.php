@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Crew;
+use App\Models\{Crew, Rank};
 use DB;
 
 // EXCEL
@@ -81,8 +81,11 @@ class CrewController extends Controller
     // }
 
     public function index(){
+        $ranks = Rank::select('id', 'name', 'abbr', 'category')->get();
+
         return $this->_view('index', [
-            'title' => ucfirst($this->table)
+            'title' => ucfirst($this->table),
+            'categories' => $ranks->groupBy('category')
         ]);
     }
 
