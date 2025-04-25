@@ -156,9 +156,9 @@
 
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="blood_type">Blood Type</label>
+                                                    <label for="blood_type">Civil Status</label>
                                                     <select id="rank-applied" class="form-control">
-                                                        <option>Select Status</option>
+                                                        <option>Select status</option>
                                                         <option value="Single">Single</option>
                                                         <option value="Married">Married</option>
                                                         <option value="Widowed">Widowed</option>
