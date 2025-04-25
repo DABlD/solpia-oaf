@@ -155,6 +155,16 @@
                                             {{ $input(3, 'blood_type', 'Blood Type') }}
                                             {{ $input(3, 'civil_status', 'Civil Status') }}
 
+                                            <div class="col-md-3">
+                                                <select id="rank-applied" class="form-control">
+                                                    <option>Select Status</option>
+                                                    <option value="Single">Single</option>
+                                                    <option value="Married">Married</option>
+                                                    <option value="Widowed">Widowed</option>
+                                                    <option value="Divorced">Divorced</option>
+                                                </select>
+                                            </div>
+
                                             {{ $input(12, 'address', 'Metro Manila Address') }}
                                             {{ $input(12, 'provincial_address', 'Provincial Address') }}
 
