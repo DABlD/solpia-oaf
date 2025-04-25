@@ -153,7 +153,6 @@
                                             {{ $input(3, 'height', 'Height (cm)') }}
                                             {{ $input(3, 'weight', 'Weight (kg)') }}
                                             {{ $input(3, 'blood_type', 'Blood Type') }}
-                                            {{ $input(3, 'civil_status', 'Civil Status') }}
 
                                             <div class="col-md-3">
                                                 <select id="rank-applied" class="form-control">
