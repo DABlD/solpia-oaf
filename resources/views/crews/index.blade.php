@@ -25,6 +25,7 @@
                     				<th>FName</th>
                     				<th>MName</th>
                     				<th>Lname</th>
+                    				<th>Date</th>
                     				<th>Actions</th>
                     			</tr>
                     		</thead>
@@ -83,6 +84,7 @@
 					{data: 'fname'},
 					{data: 'mname'},
 					{data: 'lname'},
+					{data: 'created_at'},
 					{data: 'actions'},
 				],
         		pageLength: 25,
@@ -90,6 +92,14 @@
 				// drawCallback: function(){
 				// 	init();
 				// }
+                columnDefs: [
+                    {
+                        targets: 5,
+                        render: date => {
+                            return toDateTime(date);
+                        }
+                    }
+                ]
 			});
 		});
 
