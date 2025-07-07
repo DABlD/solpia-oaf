@@ -126,7 +126,7 @@ class OnlineController extends Controller
             $temp->fname = $fd['fname'];
             $temp->mname = $fd['mname'];
             $temp->lname = $fd['lname'];
-            $temp->birthday = $fd['birthday'];
+            $temp->birthday = (strtotime($fd->birthday) > strtotime(0)) ? now()->parse($fd->birthday)->toDateString() : null;
             $temp->contact = $fd['contact'];
             $temp->occupation = $fd['occupation'];
             $temp->address = $fd['address'];
@@ -217,101 +217,101 @@ class OnlineController extends Controller
 
             // SAVE DOCUMENTS
             foreach($temp->travelDocs as $docu){
-                $temp = new Document();
-                $temp->crew_id = $crew->id;
-                $temp->type = $docu->type;
-                $temp->number = $docu->number;
-                $temp->issue_date = (strtotime($docu->issue_date) > strtotime(0)) ? now()->parse($docu->issue_date)->toDateString() : null;
-                $temp->expiry_date = (strtotime($docu->expiry_date) > strtotime(0)) ? now()->parse($docu->expiry_date)->toDateString() : null;
-                $temp->save();
+                $temp2 = new Document();
+                $temp2->crew_id = $crew->id;
+                $temp2->type = $docu->type;
+                $temp2->number = $docu->number;
+                $temp2->issue_date = (strtotime($docu->issue_date) > strtotime(0)) ? now()->parse($docu->issue_date)->toDateString() : null;
+                $temp2->expiry_date = (strtotime($docu->expiry_date) > strtotime(0)) ? now()->parse($docu->expiry_date)->toDateString() : null;
+                $temp2->save();
             }
 
             // SAVE SEA SERVICE
-            if($temp->seaService){
+            if(isset($temp->seaService)){
                 foreach($temp->seaService as $ss){
-                    $temp = new SeaService();
-                    $temp->crew_id = $crew->id;
-                    $temp->vessel_name = $ss->vessel_name;
-                    $temp->vessel_type = $ss->vessel_type;
-                    $temp->rank = $ss->rank;
-                    $temp->gross_tonnage = $ss->gross_tonnage;
-                    $temp->flag = $ss->flag;
-                    $temp->bhp_kw = $ss->bhp_kw;
-                    $temp->trade = $ss->trade;
-                    $temp->previous_salary = $ss->previous_salary;
-                    $temp->manning_agent = $ss->manning_agent;
-                    $temp->principal = $ss->principal;
-                    $temp->crew_nationality = $ss->crew_nationality;
-                    $temp->sign_on = $ss->sign_on;
-                    $temp->sign_off = $ss->sign_off;
-                    $temp->remarks = $ss->remarks;
-                    $temp->save();
+                    $temp2 = new SeaService();
+                    $temp2->crew_id = $crew->id;
+                    $temp2->vessel_name = $ss->vessel_name;
+                    $temp2->vessel_type = $ss->vessel_type;
+                    $temp2->rank = $ss->rank;
+                    $temp2->gross_tonnage = $ss->gross_tonnage;
+                    $temp2->flag = $ss->flag;
+                    $temp2->bhp_kw = $ss->bhp_kw;
+                    $temp2->trade = $ss->trade;
+                    $temp2->previous_salary = $ss->previous_salary;
+                    $temp2->manning_agent = $ss->manning_agent;
+                    $temp2->principal = $ss->principal;
+                    $temp2->crew_nationality = $ss->crew_nationality;
+                    $temp2->sign_on = $ss->sign_on;
+                    $temp2->sign_off = $ss->sign_off;
+                    $temp2->remarks = $ss->remarks;
+                    $temp2->save();
                 }
             }
 
             // SAVE EDUC BG
             if($temp->recentVessel){
                 foreach($temp->educBG as $ebg){
-                    $temp = new EducationalBackground();
-                    $temp->crew_id = $crew->id;
-                    $temp->type = $ebg->type;
-                    $temp->course = $ebg->course;
-                    $temp->year = $ebg->year;
-                    $temp->school = $ebg->school;
-                    $temp->address = $ebg->address;
-                    $temp->save();
+                    $temp2 = new EducationalBackground();
+                    $temp2->crew_id = $crew->id;
+                    $temp2->type = $ebg->type;
+                    $temp2->course = $ebg->course;
+                    $temp2->year = $ebg->year;
+                    $temp2->school = $ebg->school;
+                    $temp2->address = $ebg->address;
+                    $temp2->save();
                 }
             }
 
             // SAVE FAMILY DATA
             if($temp->familyData){
                 foreach($temp->familyData as $fd){
-                    $temp = new FamilyData();
-                    $temp->crew_id = $crew->id;
-                    $temp->type = $fd->type;
-                    $temp->fname = $fd->fname;
-                    $temp->mname = $fd->mname;
-                    $temp->lname = $fd->lname;
-                    $temp->birthday = $fd->birthday;
-                    $temp->contact = $fd->contact;
-                    $temp->occupation = $fd->occupation;
-                    $temp->address = $fd->address;
-                    $temp->save();
+                    $temp2 = new FamilyData();
+                    $temp2->crew_id = $crew->id;
+                    $temp2->type = $fd->type;
+                    $temp2->fname = $fd->fname;
+                    $temp2->mname = $fd->mname;
+                    $temp2->lname = $fd->lname;
+                    $temp2->birthday = (strtotime($fd->birthday) > strtotime(0)) ? now()->parse($fd->birthday)->toDateString() : null;
+                    $temp2->contact = $fd->contact;
+                    $temp2->occupation = $fd->occupation;
+                    $temp2->address = $fd->address;
+                    $temp2->save();
                 }
             }
 
             // SAVE RECENT VESSEL
             if($temp->recentVessel){
                 foreach($temp->recentVessel as $rv){
-                    $temp = new RecentVessel();
-                    $temp->crew_id = $crew->id;
-                    $temp->vessel_name = $rv->vessel_name;
-                    $temp->ship_manager = $rv->ship_manager;
-                    $temp->charterer = $rv->charterer;
+                    $temp2 = new RecentVessel();
+                    $temp2->crew_id = $crew->id;
+                    $temp2->vessel_name = $rv->vessel_name;
+                    $temp2->ship_manager = $rv->ship_manager;
+                    $temp2->charterer = $rv->charterer;
 
-                    $temp->type_of_cargo = $rv->type_of_cargo ?? null;
-                    $temp->loading_port = $rv->loading_port ?? null;
-                    $temp->discharging_port = $rv->discharging_port ?? null;
+                    $temp2->type_of_cargo = $rv->type_of_cargo ?? null;
+                    $temp2->loading_port = $rv->loading_port ?? null;
+                    $temp2->discharging_port = $rv->discharging_port ?? null;
                     
-                    $temp->main_engine = $rv->main_engine ?? null;
-                    $temp->aux_engine = $rv->aux_engine ?? null;
-                    $temp->ballast_system = $rv->ballast_system ?? null;
+                    $temp2->main_engine = $rv->main_engine ?? null;
+                    $temp2->aux_engine = $rv->aux_engine ?? null;
+                    $temp2->ballast_system = $rv->ballast_system ?? null;
 
-                    $temp->save();
+                    $temp2->save();
                 }
             }
 
             // SAVE BACKGROUND CHECK
             if($temp->bgCheck){
                 foreach($temp->bgCheck as $bg){
-                    $temp = new BackgroundCheck();
-                    $temp->crew_id = $crew->id;
-                    $temp->manning_agent = $bg->manning_agent;
-                    $temp->name = $bg->name;
-                    $temp->designation = $bg->designation;
-                    $temp->contact = $bg->contact;
+                    $temp2 = new BackgroundCheck();
+                    $temp2->crew_id = $crew->id;
+                    $temp2->manning_agent = $bg->manning_agent;
+                    $temp2->name = $bg->name;
+                    $temp2->designation = $bg->designation;
+                    $temp2->contact = $bg->contact;
 
-                    $temp->save();
+                    $temp2->save();
                 }
             }
 
