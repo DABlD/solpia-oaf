@@ -22,51 +22,51 @@
 		$i=0;
 	@endphp
 	<tr>
-		<td>{{ strtoupper($crew->educational_background[$i]->type) }}:</td>
-		<td>{{ $crew->educational_background[$i]->course }}</td>
-		<td colspan="2">{{ $crew->educational_background[$i]->year }}</td>
-		<td colspan="3">{{ $crew->educational_background[$i]->school }}</td>
-		<td colspan="2">{{ $crew->educational_background[$i]->address }}</td>
-		<td>{{ $crew->family_data[$i]->type }}:</td>
-		<td colspan="3">{{ $crew->family_data[$i]->fname }} {{ $crew->family_data[$i]->mname }} {{ $crew->family_data[$i]->lname }}</td>
+		<td>{{ isset($crew->educational_background[$i]) ? strtoupper($crew->educational_background[$i]->type) : "-" }}:</td>
+		<td>{{ $crew->educational_background[$i]->course ?? "-" }}</td>
+		<td colspan="2">{{ $crew->educational_background[$i]->year ?? "-" }}</td>
+		<td colspan="3">{{ $crew->educational_background[$i]->school ?? "-" }}</td>
+		<td colspan="2">{{ $crew->educational_background[$i]->address ?? "-" }}</td>
+		<td>{{ $crew->family_data[$i]->type ?? "" }}:</td>
+		<td colspan="3">{{ $crew->family_data[$i]->fname ?? "" }} {{ $crew->family_data[$i]->mname ?? "" }} {{ $crew->family_data[$i]->lname ?? "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->age : "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->format('M j, Y') : "" }}</td>
-		<td colspan="2">{{ $crew->family_data[$i]->occupation }}</td>
-		<td colspan="3">{{ $crew->family_data[$i]->address }}</td>
+		<td colspan="2">{{ $crew->family_data[$i]->occupation ?? "" }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->address ?? "" }}</td>
 	</tr>
 
 	@php
 		$i++;
 	@endphp
 	<tr>
-		<td>{{ strtoupper($crew->educational_background[$i]->type) }}:</td>
-		<td>{{ $crew->educational_background[$i]->course }}</td>
-		<td colspan="2">{{ $crew->educational_background[$i]->year }}</td>
-		<td colspan="3">{{ $crew->educational_background[$i]->school }}</td>
-		<td colspan="2">{{ $crew->educational_background[$i]->address }}</td>
-		<td>{{ $crew->family_data[$i]->type }}:</td>
-		<td colspan="3">{{ $crew->family_data[$i]->fname }} {{ $crew->family_data[$i]->mname }} {{ $crew->family_data[$i]->lname }}</td>
+		<td>{{ isset($crew->educational_background[$i]) ? strtoupper($crew->educational_background[$i]->type) : "-" }}:</td>
+		<td>{{ $crew->educational_background[$i]->course ?? "-" }}</td>
+		<td colspan="2">{{ $crew->educational_background[$i]->year ?? "-" }}</td>
+		<td colspan="3">{{ $crew->educational_background[$i]->school ?? "-" }}</td>
+		<td colspan="2">{{ $crew->educational_background[$i]->address ?? "-" }}</td>
+		<td>{{ $crew->family_data[$i]->type ?? "" }}:</td>
+		<td colspan="3">{{ $crew->family_data[$i]->fname ?? "" }} {{ $crew->family_data[$i]->mname ?? "" }} {{ $crew->family_data[$i]->lname ?? "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->age : "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->format('M j, Y') : "" }}</td>
-		<td colspan="2">{{ $crew->family_data[$i]->occupation }}</td>
-		<td colspan="3">{{ $crew->family_data[$i]->address }}</td>
+		<td colspan="2">{{ $crew->family_data[$i]->occupation ?? "" }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->address ?? "" }}</td>
 	</tr>
 
 	@php
 		$i++;
 	@endphp
 	<tr>
-		<td>{{ strtoupper($crew->educational_background[$i]->type) }}:</td>
-		<td>{{ $crew->educational_background[$i]->course }}</td>
-		<td colspan="2">{{ $crew->educational_background[$i]->year }}</td>
-		<td colspan="3">{{ $crew->educational_background[$i]->school }}</td>
-		<td colspan="2">{{ $crew->educational_background[$i]->address }}</td>
-		<td>{{ $crew->family_data[$i]->type }}:</td>
-		<td colspan="3">{{ $crew->family_data[$i]->fname }} {{ $crew->family_data[$i]->mname }} {{ $crew->family_data[$i]->lname }}</td>
+		<td>{{ isset($crew->educational_background[$i]) ? strtoupper($crew->educational_background[$i]->type) : "-" }}:</td>
+		<td>{{ $crew->educational_background[$i]->course ?? "-" }}</td>
+		<td colspan="2">{{ $crew->educational_background[$i]->year ?? "-" }}</td>
+		<td colspan="3">{{ $crew->educational_background[$i]->school ?? "-" }}</td>
+		<td colspan="2">{{ $crew->educational_background[$i]->address ?? "-" }}</td>
+		<td>{{ $crew->family_data[$i]->type ?? "" }}:</td>
+		<td colspan="3">{{ $crew->family_data[$i]->fname ?? "" }} {{ $crew->family_data[$i]->mname ?? "" }} {{ $crew->family_data[$i]->lname ?? "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->age : "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->format('M j, Y') : "" }}</td>
-		<td colspan="2">{{ $crew->family_data[$i]->occupation }}</td>
-		<td colspan="3">{{ $crew->family_data[$i]->address }}</td>
+		<td colspan="2">{{ $crew->family_data[$i]->occupation ?? "" }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->address ?? "" }}</td>
 	</tr>
 
 	@php
@@ -79,11 +79,11 @@
 		<td colspan="3"></td>
 		<td colspan="2"></td>
 		<td>CHILDREN:</td>
-		<td colspan="3">{{ $crew->family_data[$i]->fname }} {{ $crew->family_data[$i]->mname }} {{ $crew->family_data[$i]->lname }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->fname ?? "" }} {{ $crew->family_data[$i]->mname ?? "" }} {{ $crew->family_data[$i]->lname ?? "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->age : "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->format('M j, Y') : "" }}</td>
-		<td colspan="2">{{ $crew->family_data[$i]->occupation }}</td>
-		<td colspan="3">{{ $crew->family_data[$i]->address }}</td>
+		<td colspan="2">{{ $crew->family_data[$i]->occupation ?? "" }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->address ?? "" }}</td>
 	</tr>
 
 	@php
@@ -92,11 +92,11 @@
 	<tr>
 		<td colspan="9">COMPANY REQUIRED DATA:</td>
 		<td></td>
-		<td colspan="3">{{ $crew->family_data[$i]->fname }} {{ $crew->family_data[$i]->mname }} {{ $crew->family_data[$i]->lname }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->fname ?? "" }} {{ $crew->family_data[$i]->mname ?? "" }} {{ $crew->family_data[$i]->lname ?? "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->age : "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->format('M j, Y') : "" }}</td>
-		<td colspan="2">{{ $crew->family_data[$i]->occupation }}</td>
-		<td colspan="3">{{ $crew->family_data[$i]->address }}</td>
+		<td colspan="2">{{ $crew->family_data[$i]->occupation ?? "" }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->address ?? "" }}</td>
 	</tr>
 
 	@php
@@ -106,11 +106,11 @@
 		<td colspan="5">TIN NO: {{ $crew->tin }}</td>
 		<td colspan="4">SID: {{ $crew->sid }}</td>
 		<td></td>
-		<td colspan="3">{{ $crew->family_data[$i]->fname }} {{ $crew->family_data[$i]->mname }} {{ $crew->family_data[$i]->lname }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->fname ?? "" }} {{ $crew->family_data[$i]->mname ?? "" }} {{ $crew->family_data[$i]->lname ?? "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->age : "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->format('M j, Y') : "" }}</td>
-		<td colspan="2">{{ $crew->family_data[$i]->occupation }}</td>
-		<td colspan="3">{{ $crew->family_data[$i]->address }}</td>
+		<td colspan="2">{{ $crew->family_data[$i]->occupation ?? "" }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->address ?? "" }}</td>
 	</tr>
 
 	@php
@@ -120,11 +120,11 @@
 		<td colspan="5">SSS NO: {{ $crew->sss }}</td>
 		<td colspan="4">E-REG: {{ $crew->ereg }}</td>
 		<td></td>
-		<td colspan="3">{{ $crew->family_data[$i]->fname }} {{ $crew->family_data[$i]->mname }} {{ $crew->family_data[$i]->lname }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->fname ?? "" }} {{ $crew->family_data[$i]->mname ?? "" }} {{ $crew->family_data[$i]->lname ?? "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->age : "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->format('M j, Y') : "" }}</td>
-		<td colspan="2">{{ $crew->family_data[$i]->occupation }}</td>
-		<td colspan="3">{{ $crew->family_data[$i]->address }}</td>
+		<td colspan="2">{{ $crew->family_data[$i]->occupation ?? "" }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->address ?? "" }}</td>
 	</tr>
 
 	@php
@@ -134,11 +134,11 @@
 		<td colspan="5">COVERALL: {{ $crew->clothes_size }}</td>
 		<td colspan="4">PARKA: {{ $crew->parka }}</td>
 		<td>BENEFICIARY:</td>
-		<td colspan="3">{{ $crew->family_data[$i]->fname }} {{ $crew->family_data[$i]->mname }} {{ $crew->family_data[$i]->lname }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->fname ?? "" }} {{ $crew->family_data[$i]->mname ?? "" }} {{ $crew->family_data[$i]->lname ?? "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->age : "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->format('M j, Y') : "" }}</td>
-		<td colspan="2">{{ $crew->family_data[$i]->occupation }}</td>
-		<td colspan="3">{{ $crew->family_data[$i]->address }}</td>
+		<td colspan="2">{{ $crew->family_data[$i]->occupation ?? "" }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->address ?? "" }}</td>
 	</tr>
 
 	@php
@@ -148,11 +148,11 @@
 		<td colspan="5">WAIST (inches): {{ $crew->waist }}</td>
 		<td colspan="4">SAFETY SHOES: {{ $crew->shoe_size }}</td>
 		<td></td>
-		<td colspan="3">{{ $crew->family_data[$i]->fname }} {{ $crew->family_data[$i]->mname }} {{ $crew->family_data[$i]->lname }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->fname ?? "" }} {{ $crew->family_data[$i]->mname ?? "" }} {{ $crew->family_data[$i]->lname ?? "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->age : "" }}</td>
 		<td>{{ isset($crew->family_data[$i]->birthday) ? now()->parse($crew->family_data[$i]->birthday)->format('M j, Y') : "" }}</td>
-		<td colspan="2">{{ $crew->family_data[$i]->occupation }}</td>
-		<td colspan="3">{{ $crew->family_data[$i]->address }}</td>
+		<td colspan="2">{{ $crew->family_data[$i]->occupation ?? "" }}</td>
+		<td colspan="3">{{ $crew->family_data[$i]->address ?? "" }}</td>
 	</tr>
 
 	<tr>
@@ -176,7 +176,11 @@
 	@php
 		$i=0;
 
-		$type = ($crew->recent_vessel[0]->type_of_cargo || $crew->recent_vessel[1]->type_of_cargo || $crew->recent_vessel[2]->type_of_cargo || $crew->recent_vessel[3]->type_of_cargo || $crew->recent_vessel[4]->type_of_cargo) ? "D" : "E";
+		$type = null;
+		if(isset($crew->recent_vessel) && $crew->recent_vessel->count()){
+			$type = ($crew->recent_vessel[0]->type_of_cargo || $crew->recent_vessel[1]->type_of_cargo || $crew->recent_vessel[2]->type_of_cargo || $crew->recent_vessel[3]->type_of_cargo || $crew->recent_vessel[4]->type_of_cargo) ? "D" : "E";
+		}
+
 	@endphp
 
 	<tr>
@@ -334,40 +338,40 @@
 		$i=0;
 	@endphp
 	<tr>
-		<td colspan="6">1. {{ $crew->background_check[$i]->manning_agent }}</td>
-		<td colspan="5">{{ $crew->background_check[$i]->contact }}</td>
-		<td colspan="4">{{ $crew->background_check[$i]->designation }}</td>
-		<td colspan="5">{{ $crew->background_check[$i]->contact }}</td>
+		<td colspan="6">1. {{ $crew->background_check[$i]->manning_agent ?? "" }}</td>
+		<td colspan="5">{{ $crew->background_check[$i]->contact ?? "" }}</td>
+		<td colspan="4">{{ $crew->background_check[$i]->designation ?? "" }}</td>
+		<td colspan="5">{{ $crew->background_check[$i]->contact ?? "" }}</td>
 	</tr>
 
 	@php
 		$i++;
 	@endphp
 	<tr>
-		<td colspan="6">2. {{ $crew->background_check[$i]->manning_agent }}</td>
-		<td colspan="5">{{ $crew->background_check[$i]->contact }}</td>
-		<td colspan="4">{{ $crew->background_check[$i]->designation }}</td>
-		<td colspan="5">{{ $crew->background_check[$i]->contact }}</td>
+		<td colspan="6">2. {{ $crew->background_check[$i]->manning_agent ?? "" }}</td>
+		<td colspan="5">{{ $crew->background_check[$i]->contact ?? "" }}</td>
+		<td colspan="4">{{ $crew->background_check[$i]->designation ?? "" }}</td>
+		<td colspan="5">{{ $crew->background_check[$i]->contact ?? "" }}</td>
 	</tr>
 
 	@php
 		$i++;
 	@endphp
 	<tr>
-		<td colspan="6">3. {{ $crew->background_check[$i]->manning_agent }}</td>
-		<td colspan="5">{{ $crew->background_check[$i]->contact }}</td>
-		<td colspan="4">{{ $crew->background_check[$i]->designation }}</td>
-		<td colspan="5">{{ $crew->background_check[$i]->contact }}</td>
+		<td colspan="6">3. {{ $crew->background_check[$i]->manning_agent ?? "" }}</td>
+		<td colspan="5">{{ $crew->background_check[$i]->contact ?? "" }}</td>
+		<td colspan="4">{{ $crew->background_check[$i]->designation ?? "" }}</td>
+		<td colspan="5">{{ $crew->background_check[$i]->contact ?? "" }}</td>
 	</tr>
 
 	@php
 		$i++;
 	@endphp
 	<tr>
-		<td colspan="6">4. {{ $crew->background_check[$i]->manning_agent }}</td>
-		<td colspan="5">{{ $crew->background_check[$i]->contact }}</td>
-		<td colspan="4">{{ $crew->background_check[$i]->designation }}</td>
-		<td colspan="5">{{ $crew->background_check[$i]->contact }}</td>
+		<td colspan="6">4. {{ $crew->background_check[$i]->manning_agent ?? "" }}</td>
+		<td colspan="5">{{ $crew->background_check[$i]->contact ?? "" }}</td>
+		<td colspan="4">{{ $crew->background_check[$i]->designation ?? "" }}</td>
+		<td colspan="5">{{ $crew->background_check[$i]->contact ?? "" }}</td>
 	</tr>
 
 	<tr>
