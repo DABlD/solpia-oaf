@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','OnlineController@index')->name('online.apply');
 Route::get('update','OnlineController@update')->name('online.update');
 Route::post('store','OnlineController@store')->name('online.store');
+Route::get('backLog','OnlineController@backLog')->name('online.backLog');
 Route::get('privacy-policy','OnlineController@privacy')->name('online.privacy-policy');
 
 Route::group([
