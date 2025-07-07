@@ -315,7 +315,7 @@ class OnlineController extends Controller
                 }
             }
 
-            // echo 1 . '<br>';
+            echo $crew->id . '<br>';
         }
     }
 
