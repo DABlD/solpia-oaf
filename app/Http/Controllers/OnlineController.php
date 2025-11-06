@@ -78,8 +78,8 @@ class OnlineController extends Controller
             $temp->crew_id = $crew->id;
             $temp->type = $docu['type'];
             $temp->number = $docu['number'];
-            $temp->issue_date = (strtotime($docu->issue_date) > strtotime(0)) ? now()->parse($docu->issue_date)->toDateString() : null;
-            $temp->expiry_date = (strtotime($docu->expiry_date) > strtotime(0)) ? now()->parse($docu->expiry_date)->toDateString() : null;
+            $temp->issue_date = (isset($docu->issue_date) && (strtotime($docu->issue_date) > strtotime(0))) ? now()->parse($docu->issue_date)->toDateString() : null;
+            $temp->expiry_date = (isset($docu->expiry_date) && (strtotime($docu->expiry_date) > strtotime(0))) ? now()->parse($docu->expiry_date)->toDateString() : null;
             $temp->save();
         }
 
@@ -126,7 +126,7 @@ class OnlineController extends Controller
             $temp->fname = $fd['fname'];
             $temp->mname = $fd['mname'];
             $temp->lname = $fd['lname'];
-            $temp->birthday = (strtotime($fd->birthday) > strtotime(0)) ? now()->parse($fd->birthday)->toDateString() : null;
+            $temp->birthday = (isset($fd->birthday) && (strtotime($fd->birthday) > strtotime(0))) ? now()->parse($fd->birthday)->toDateString() : null;
             $temp->contact = $fd['contact'];
             $temp->occupation = $fd['occupation'];
             $temp->address = $fd['address'];
