@@ -91,6 +91,12 @@ class DatatableController extends Controller
         foreach($array as $item){
             $item->actions = $item->actions;
             $item->rank = $item->rank;
+
+            $item->vessel_types = $item->sea_service()
+                                    ->select('vessel_type')
+                                    ->distinct()
+                                    ->pluck('vessel_type')
+                                    ->implode(', ');
         }
 
         // IF HAS LOAD

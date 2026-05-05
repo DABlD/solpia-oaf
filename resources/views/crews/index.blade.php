@@ -25,6 +25,7 @@
                     				<th>FName</th>
                     				<th>MName</th>
                     				<th>Lname</th>
+                    				<th>Vessel Exp</th>
                     				<th>Date</th>
                     				<th>Actions</th>
                     			</tr>
@@ -84,6 +85,7 @@
 					{data: 'fname'},
 					{data: 'mname'},
 					{data: 'lname'},
+					{data: 'vessel_types', width: "150px"},
 					{data: 'created_at'},
 					{data: 'actions'},
 				],
@@ -94,7 +96,7 @@
 				// }
                 columnDefs: [
                     {
-                        targets: 5,
+                        targets: 6,
                         render: date => {
                             return toDateTime(date);
                         }
