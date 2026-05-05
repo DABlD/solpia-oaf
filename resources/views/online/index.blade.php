@@ -253,14 +253,6 @@
                                                 </b>
 
                                                 &nbsp;
-
-                                                <a class="btn btn-success btn-sm" data-toggle="tooltip" title="Add" onclick="addSS()">
-                                                    <i class="fas fa-plus"></i>
-                                                </a>
-
-                                                <span style="font-size: 12px; color: red; font-weight: bold;">
-                                                    Click button to add record
-                                                </span>
                                                 {{-- <div class="float-right" style="margin-top: 5px;">
                                                 </div> --}}
                                             </div>
@@ -270,6 +262,19 @@
 
                                         <div class="row ssrows">
                                         </div>
+
+                                        <div class="row">
+                                            <a class="btn btn-success btn-sm" data-toggle="tooltip" title="Add" onclick="addSS()">
+                                                <i class="fas fa-plus"></i>
+                                            </a>
+
+                                            <span style="font-size: 12px; color: red; font-weight: bold;">
+                                                &nbsp; Add more sea service
+                                            </span>
+
+                                        </div>
+
+                                        <br>
 
                                         <div class="row row-head">
                                             <div class="col-md-12" style="text-align: left;">
@@ -703,6 +708,10 @@
                     altFormat: 'F j, Y',
                     dateFormat: 'Y-m-d',
                 });
+
+                for(let i = 0; i < 10; i++){
+                    addSS();
+                }
             });
 
             function addSS(){
