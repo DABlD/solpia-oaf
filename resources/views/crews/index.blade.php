@@ -22,9 +22,9 @@
                     			<tr>
                     				<th>ID</th>
                     				<th>Rank</th>
-                    				<th>FName</th>
-                    				<th>MName</th>
-                    				<th>Lname</th>
+                    				<th>Name</th>
+                    				<th>Age</th>
+                    				<th>Contact</th>
                     				<th>Vessel Exp</th>
                     				<th>Date</th>
                     				<th>Actions</th>
@@ -82,9 +82,9 @@
 				columns: [
 					{data: 'id'},
 					{data: 'rank.abbr'},
-					{data: 'fname'},
-					{data: 'mname'},
-					{data: 'lname'},
+					{data: 'name'},
+					{data: 'age'},
+					{data: 'contact'},
 					{data: 'vessel_types', width: "150px"},
 					{data: 'created_at'},
 					{data: 'actions'},

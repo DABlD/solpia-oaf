@@ -92,6 +92,13 @@ class DatatableController extends Controller
             $item->actions = $item->actions;
             $item->rank = $item->rank;
 
+            $item->name = $item->lname . ", " . $item->fname . " " . $item->mname;
+
+            $item->age = null;
+            if(strlen($item->birthday) == 10){
+                $item->age = now()->parse($item->birthday)->age;
+            }
+
             $item->vessel_types = $item->sea_service()
                                     ->select('vessel_type')
                                     ->distinct()
