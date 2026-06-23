@@ -150,8 +150,8 @@
                                             {{ $input(4, 'place_of_birth', 'Place of Birth') }}
                                             {{ $input(4, 'religion', 'Religion') }}
 
-                                            {{ $input(3, 'height', 'Height (cm)') }}
-                                            {{ $input(3, 'weight', 'Weight (kg)') }}
+                                            {{ $input(3, 'height', 'Height (cm)', null, 'number') }}
+                                            {{ $input(3, 'weight', 'Weight (kg)', null, 'number') }}
                                             {{ $input(3, 'blood_type', 'Blood Type') }}
 
                                             <div class="col-md-3">
