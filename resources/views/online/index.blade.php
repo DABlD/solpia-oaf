@@ -158,7 +158,7 @@
                                                 <div class="form-group">
                                                     <label for="blood_type">Civil Status</label>
                                                     <select id="civil_status" class="form-control">
-                                                        <option>Select status</option>
+                                                        <option value="">Select status</option>
                                                         <option value="Single">Single</option>
                                                         <option value="Married">Married</option>
                                                         <option value="Widowed">Widowed</option>
